@@ -16,7 +16,6 @@ public class Ping implements HttpHandler {
             os.write(body.getBytes());
         }
         exchange.close();
-
     }
 
 }

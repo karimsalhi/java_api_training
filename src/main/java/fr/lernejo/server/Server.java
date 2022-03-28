@@ -17,12 +17,12 @@ public class Server {
         this.url = url;
     }
 
-    public boolean run() throws IOException {
+    public HttpServer run() throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(this.url, this.port), 0);
         server.setExecutor(Executors.newFixedThreadPool(1));
         server.createContext("/ping", new Ping());
         server.start();
-        return true;
+        return server;
     }
 
 }
